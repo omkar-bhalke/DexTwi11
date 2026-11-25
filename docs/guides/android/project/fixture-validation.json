@@ -1,0 +1,24 @@
+{
+  "build_exit_code": 0,
+  "checks": {
+    "android_versions": "UNTESTED",
+    "api_integration": "UNTESTED",
+    "billing_sandbox": "UNTESTED",
+    "build": "PASSED",
+    "buttons": "UNTESTED",
+    "densities": "UNTESTED",
+    "error_handling": "UNTESTED",
+    "input_validation": "UNTESTED",
+    "install": "UNTESTED",
+    "launch": "UNTESTED",
+    "navigation": "UNTESTED",
+    "orientation": "UNTESTED",
+    "permissions": "UNTESTED",
+    "rendering": "UNTESTED",
+    "storage": "UNTESTED"
+  },
+  "debug_apk_sha256": "bb67b642076ac7a37c80f4623f1064b28bf1eb2ba1f3e9614c21b730e10b9d17",
+  "report_sha256": "3e28ed4317e7f4505b4d8cb7dfe3b6dca86a61c7ddc7def63281f94cf1471c08",
+  "source_integrity": "PASSED",
+  "xml_parsing": "PASSED"
+}

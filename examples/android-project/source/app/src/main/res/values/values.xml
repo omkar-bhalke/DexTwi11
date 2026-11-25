@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">Field Notes</string><string name="save">Save draft</string>
+  <string name="prompt">Write a note</string><dimen name="gutter">20dp</dimen><color name="paper">#FAFAF6</color>
+</resources>

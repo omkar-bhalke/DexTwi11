@@ -1,0 +1,4 @@
+# Optional parsers, screenshot support and the project MCP server.
+androguard==4.1.3
+Pillow==13.0.0
+mcp==1.29.0

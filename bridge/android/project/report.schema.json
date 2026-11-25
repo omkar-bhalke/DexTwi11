@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REA Android project report v1",
+  "type": "object",
+  "required": ["schema", "target", "files", "observations", "limitations", "coverage", "approval", "reconstruction_plan", "element_specification"],
+  "properties": {
+    "schema": {"const": "rea.android-project/1"},
+    "target": {
+      "type": "object", "required": ["name", "format", "bytes", "sha256", "hash_scope"],
+      "properties": {
+        "name": {"type": "string"}, "format": {"enum": ["apk","aab","apks","xapk","directory"]},
+        "bytes": {"type": ["integer","null"],"minimum": 0}, "sha256": {"$ref":"#/$defs/hash"},
+        "hash_scope":{"type":"string"}
+      }
+    },
+    "files": {"type": "array","items": {"allOf":[{"$ref":"#/$defs/item"},{
+      "required":["container","occurrence","name","type","bytes","sha256","decoding","used_by","reuse"],
+      "properties":{"container":{"type":"array","items":{"type":"string"}},"occurrence":{"type":"integer","minimum":1},"sha256":{"$ref":"#/$defs/hash"},"used_by":{"type":"array"},"reuse":{"const":"REQUIRES_USER_INPUT"}}
+    }]}},
+    "observations": {"type":"array","items":{"allOf":[{"$ref":"#/$defs/item"},{"required":["data"],"properties":{"data":{"type":"object"}}}]}},
+    "limitations": {"type":"array","items":{"allOf":[{"$ref":"#/$defs/item"},{"required":["reason"],"properties":{"reason":{"type":"string"}}}]}},
+    "coverage": {"type":"object","required":["file_occurrences","hashed","file_statuses","observation_categories","inventory_scope","runtime_behavior"]},
+    "approval": {"type":"object","required":["state","actions"],"properties":{"state":{"const":"AWAITING_USER_DECISION"},"actions":{"const":["YES","NO","REVIEW","EXPORT"]}}},
+    "reconstruction_plan": {"type":"array","items":{"type":"string"}},
+    "element_specification":{"type":"object"}
+  },
+  "$defs": {
+    "hash":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},
+    "item": {
+      "type":"object","required":["id","category","location","status","evidence","confidence","dependencies","reconstruction_status"],
+      "properties": {
+        "id":{"type":"string","pattern":"^[a-f0-9]{32}$"},"category":{"type":"string"},"location":{"type":"string"},
+        "status":{"enum":["DISCOVERED","ANALYZED","VERIFIED","PARTIALLY_ANALYZED","UNKNOWN","NOT_SUPPORTED","REQUIRES_RUNTIME","REQUIRES_USER_INPUT"]},
+        "evidence":{"type":"string"},"confidence":{"enum":["observed","derived","inferred"]},
+        "dependencies":{"type":"array"},"reconstruction_status":{"type":"string"}
+      }
+    }
+  }
+}

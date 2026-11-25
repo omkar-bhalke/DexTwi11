@@ -1,0 +1,62 @@
+{
+  "target": {
+    "name": "ApiDemos.apk",
+    "format": "apk",
+    "bytes": 6521217,
+    "sha256": "a9eecf37b26cd084855c530db81c2bb1b91f4c1b095a04f47aa7c20e2791f686",
+    "hash_scope": "entire file"
+  },
+  "package": {
+    "package": "io.appium.android.apis",
+    "split": null,
+    "config_for_split": null,
+    "uses_splits": [],
+    "label": "@7F0F0066",
+    "version_name": "6.0.18",
+    "version_code": "44",
+    "min_sdk": "26",
+    "target_sdk": "33",
+    "default_label": "API Demos"
+  },
+  "coverage": {
+    "file_occurrences": 869,
+    "hashed": 869,
+    "file_statuses": {
+      "ANALYZED": 446,
+      "DISCOVERED": 58,
+      "PARTIALLY_ANALYZED": 365
+    },
+    "observation_categories": {
+      "class": 5700,
+      "component": 355,
+      "element": 2015,
+      "field": 18133,
+      "interaction": 15,
+      "layout": 329,
+      "method": 34882,
+      "package": 1,
+      "permission": 15,
+      "resource-id": 3144,
+      "security": 1,
+      "signature": 1,
+      "storage": 26,
+      "value": 4388,
+      "visual": 295
+    },
+    "inventory_scope": "Enumerated files, nested APK members and explicit omissions",
+    "runtime_behavior": "REQUIRES_RUNTIME"
+  },
+  "signature": {
+    "v1": false,
+    "v2": true,
+    "v3": false,
+    "v3.1": false
+  },
+  "ui_resources": {
+    "layout": 309,
+    "menu": 20
+  },
+  "limitations": {
+    "Binary XML decoder flagged a noncanonical encoding. Recovered declarations need corroboration.": 350
+  }
+}
